@@ -1,2 +1,2 @@
 # MiniMap
-MiniMap is a lightweight .NET Minimal API endpoint builder library.
+MiniMap is a lightweight .NET Minimal API endpoint builder/mapper library.
