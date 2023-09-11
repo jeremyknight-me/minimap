@@ -1,2 +1,2 @@
-# minimal-map
-MinimalMap.NET is a lightweight Minimal API endpoint builder library.
+# MinimalMap
+MinimalMap is a lightweight .NET Minimal API endpoint builder library.
