@@ -2,7 +2,7 @@
 
 namespace MiniMap.Core;
 
-public interface IMinimalMapEndpointBuilder
+public interface IMiniMapEndpointBuilder
 {
 	void Build(IEndpointRouteBuilder endpointRouteBuilder);
 }
