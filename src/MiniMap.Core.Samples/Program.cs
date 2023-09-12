@@ -1,3 +1,4 @@
+using MiniMap.Core.Samples.Modules.Vanilla; // needs access to every module
 
 namespace MiniMap.Core.Samples;
 
@@ -6,17 +7,17 @@ public class Program
 	public static void Main(string[] args)
 	{
 		var builder = WebApplication.CreateBuilder(args);
+		var services = builder.Services;
 
-		// Add services to the container.
-		builder.Services.AddAuthorization();
+		services.AddAuthorization();
 
-		// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-		builder.Services.AddEndpointsApiExplorer();
-		builder.Services.AddSwaggerGen();
+		services.AddMiniMap(); // adds all endpoint builders to DI
+
+		services.AddEndpointsApiExplorer();
+		services.AddSwaggerGen();
 
 		var app = builder.Build();
 
-		// Configure the HTTP request pipeline.
 		if (app.Environment.IsDevelopment())
 		{
 			app.UseSwagger();
@@ -27,25 +28,10 @@ public class Program
 
 		app.UseAuthorization();
 
-		var summaries = new[]
-		{
-			"Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-		};
+		app.UseMiniMap(); // calls all endpoint builders to define all endpoint routes
 
-		app.MapGet("/weatherforecast", (HttpContext httpContext) =>
-		{
-			var forecast = Enumerable.Range(1, 5).Select(index =>
-				new WeatherForecast
-				{
-					Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-					TemperatureC = Random.Shared.Next(-20, 55),
-					Summary = summaries[Random.Shared.Next(summaries.Length)]
-				})
-				.ToArray();
-			return forecast;
-		})
-		.WithName("GetWeatherForecast")
-		.WithOpenApi();
+		// one line per module is needed
+		app.UseVanillaEndpoints();
 
 		app.Run();
 	}

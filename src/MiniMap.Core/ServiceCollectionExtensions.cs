@@ -14,11 +14,8 @@ public static class ServiceCollectionExtensions
 		return services.AddMiniMap(assemblies);
 	}
 
-	public static IServiceCollection AddMiniMap<T>(this IServiceCollection services)
-	{
-		var assembly = typeof(T).Assembly;
-		return services.AddMiniMap(assembly);
-	}
+	public static IServiceCollection AddMiniMap<T>(this IServiceCollection services) 
+		=> services.AddMiniMap(typeof(T));
 
 	public static IServiceCollection AddMiniMap(this IServiceCollection services, Type typeInAssembly)
 	{
