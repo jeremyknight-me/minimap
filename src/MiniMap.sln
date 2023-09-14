@@ -5,9 +5,9 @@ VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniMap.Core", "MiniMap.Core\MiniMap.Core.csproj", "{ADFF7B33-F9A5-4787-872A-02F24B5BDB24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniMap.Core.Tests", "MiniMap.Core.Tests\MiniMap.Core.Tests.csproj", "{F3506965-A62A-4AF6-94B8-AAE61570E99E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniMap.Core.Tests", "MiniMap.Core.Tests\MiniMap.Core.Tests.csproj", "{F3506965-A62A-4AF6-94B8-AAE61570E99E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniMap.Core.Samples", "MiniMap.Core.Samples\MiniMap.Core.Samples.csproj", "{3314A73F-FB66-4F38-9C82-6682F17A0D1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniMap.Core.Samples", "MiniMap.Core.Samples\MiniMap.Core.Samples.csproj", "{3314A73F-FB66-4F38-9C82-6682F17A0D1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

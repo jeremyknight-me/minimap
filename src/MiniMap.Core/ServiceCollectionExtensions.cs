@@ -10,7 +10,7 @@ public static class ServiceCollectionExtensions
 {
 	public static IServiceCollection AddMiniMap(this IServiceCollection services)
 	{
-		var assemblies = new Assembly[] { Assembly.GetExecutingAssembly() };
+		var assemblies = new Assembly[] { Assembly.GetCallingAssembly() };
 		return services.AddMiniMap(assemblies);
 	}
 

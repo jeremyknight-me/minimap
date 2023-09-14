@@ -1,0 +1,9 @@
+@url=https://localhost:7217
+
+###
+
+GET {{url}}/vanilla/weatherforecast
+
+###
+
+GET {{url}}/minimap/weatherforecast

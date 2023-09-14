@@ -21,7 +21,6 @@ public sealed class MiniMapEndpointBuilder : IMiniMapEndpointBuilder
 				.ToArray();
 			return forecast;
 		})
-		.WithName("GetWeatherForecast")
 		.WithOpenApi();
 	}
 }

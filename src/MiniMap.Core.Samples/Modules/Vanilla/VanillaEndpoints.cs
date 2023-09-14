@@ -21,7 +21,6 @@ public static class VanillaEndpoints
 				.ToArray();
 			return forecast;
 		})
-		.WithName("GetWeatherForecast")
 		.WithOpenApi();
 	}
 }
