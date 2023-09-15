@@ -11,6 +11,32 @@ public class ServiceCollectionExtensionsTests
 	public void AddMiniMap_GenericTypeInAssembly()
 	{
 		services.AddMiniMap<TestMiniMapEndpointBuilder>();
+		this.AssertCollection();
+	}
+
+	[Fact]
+	public void AddMiniMap_TypeInAssembly()
+	{
+		services.AddMiniMap(typeof(TestMiniMapEndpointBuilder));
+		this.AssertCollection();
+	}
+
+	[Fact]
+	public void AddMiniMap_Assembly()
+	{
+		services.AddMiniMap(typeof(TestMiniMapEndpointBuilder).Assembly);
+		this.AssertCollection();
+	}
+
+	[Fact]
+	public void AddMiniMap_Assemblies()
+	{
+		services.AddMiniMap(new[] { typeof(TestMiniMapEndpointBuilder).Assembly });
+		this.AssertCollection();
+	}
+
+	private void AssertCollection()
+	{
 		Assert.Equal(1, services.Count);
 		Assert.Collection(services,
 			s =>
@@ -20,20 +46,5 @@ public class ServiceCollectionExtensionsTests
 				Assert.Equal(typeof(TestMiniMapEndpointBuilder), s.ImplementationType);
 			}
 		);
-	}
-
-	[Fact]
-	public void AddMiniMap_TypeInAssembly()
-	{
-	}
-
-	[Fact]
-	public void AddMiniMap_Assembly()
-	{
-	}
-
-	[Fact]
-	public void AddMiniMap_Assemblies()
-	{
 	}
 }
