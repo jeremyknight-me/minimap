@@ -2,7 +2,7 @@
 
 public sealed class MiniMapEndpointBuilder : IMiniMapEndpointBuilder
 {
-	public void Build(IEndpointRouteBuilder app)
+    public void Build(IEndpointRouteBuilder app)
 	{
 		var summaries = new[]
 		{
